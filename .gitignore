@@ -1,0 +1,10 @@
+build/
+install/
+log/
+AGENTS.md
+*.log
+cad/kr6_r1820_hw_nx/
+cad/kr6_r1820_hw_parasolid/
+cad/pdf_pages/
+src/DOBOT-Magician-E6-ROS2/
+src/my_first_pkg/
