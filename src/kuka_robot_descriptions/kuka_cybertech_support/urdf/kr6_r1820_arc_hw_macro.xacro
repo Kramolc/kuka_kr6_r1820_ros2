@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="kr6_r1820_arc_hw">
+  <xacro:macro name="kuka_kr6_r1820_arc_hw_robot" params="prefix package_name">
+    <xacro:property name="mesh_path" value="package://${package_name}/meshes/kr6_r1820_arc_hw/visual"/>
+    <xacro:property name="mesh_scale" value="0.001 0.001 0.001"/>
+
+    <material name="kuka_orange">
+      <color rgba="1.0 0.45 0.0 1.0"/>
+    </material>
+    <material name="kuka_dark">
+      <color rgba="0.08 0.08 0.08 1.0"/>
+    </material>
+    <material name="debug_link_1">
+      <color rgba="1.0 0.25 0.0 1.0"/>
+    </material>
+    <material name="debug_link_2">
+      <color rgba="0.0 0.75 1.0 1.0"/>
+    </material>
+    <material name="debug_link_3">
+      <color rgba="0.1 0.85 0.25 1.0"/>
+    </material>
+    <material name="debug_link_4">
+      <color rgba="1.0 0.9 0.0 1.0"/>
+    </material>
+    <material name="debug_link_5">
+      <color rgba="0.75 0.25 1.0 1.0"/>
+    </material>
+    <material name="debug_link_6">
+      <color rgba="1.0 0.1 0.55 1.0"/>
+    </material>
+
+    <link name="${prefix}base"/>
+    <link name="${prefix}base_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="${mesh_path}/base_link.stl" scale="${mesh_scale}"/>
+        </geometry>
+        <material name="kuka_dark"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0.14" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.18" length="0.28"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="45.0"/>
+        <origin xyz="0 0 0.14" rpy="0 0 0"/>
+        <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+      </inertial>
+    </link>
+
+    <link name="${prefix}link_1">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="${mesh_path}/link_1.stl" scale="${mesh_scale}"/>
+        </geometry>
+        <material name="debug_link_1"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0.14" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.145" length="0.28"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="55.0"/>
+        <origin xyz="0 0 0.14" rpy="0 0 0"/>
+        <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+      </inertial>
+    </link>
+
+    <link name="${prefix}link_2">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="${mesh_path}/link_2.stl" scale="${mesh_scale}"/>
+        </geometry>
+        <material name="debug_link_2"/>
+      </visual>
+      <collision>
+        <origin xyz="0.425 0 0" rpy="0 1.5707963267948966 0"/>
+        <geometry>
+          <cylinder radius="0.095" length="0.85"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="48.0"/>
+        <origin xyz="0.425 0 0" rpy="0 0 0"/>
+        <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="3.0" iyz="0.0" izz="3.0"/>
+      </inertial>
+    </link>
+
+    <link name="${prefix}link_3">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="${mesh_path}/link_3.stl" scale="${mesh_scale}"/>
+        </geometry>
+        <material name="debug_link_3"/>
+      </visual>
+      <collision>
+        <origin xyz="0.18 -0.11 0.04" rpy="0 1.5707963267948966 0"/>
+        <geometry>
+          <cylinder radius="0.085" length="0.36"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="30.0"/>
+        <origin xyz="0.18 -0.11 0.04" rpy="0 0 0"/>
+        <inertia ixx="0.7" ixy="0.0" ixz="0.0" iyy="1.2" iyz="0.0" izz="1.2"/>
+      </inertial>
+    </link>
+
+    <link name="${prefix}link_4">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="${mesh_path}/link_4.stl" scale="${mesh_scale}"/>
+        </geometry>
+        <material name="debug_link_4"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 -0.225" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.065" length="0.45"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="12.0"/>
+        <origin xyz="0 0 -0.225" rpy="0 0 0"/>
+        <inertia ixx="0.2" ixy="0.0" ixz="0.0" iyy="0.2" iyz="0.0" izz="0.1"/>
+      </inertial>
+    </link>
+
+    <link name="${prefix}link_5">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="${mesh_path}/link_5.stl" scale="${mesh_scale}"/>
+        </geometry>
+        <material name="debug_link_5"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 1.5707963267948966 0"/>
+        <geometry>
+          <cylinder radius="0.055" length="0.13"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="4.0"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <inertia ixx="0.02" ixy="0.0" ixz="0.0" iyy="0.02" iyz="0.0" izz="0.02"/>
+      </inertial>
+    </link>
+
+    <link name="${prefix}link_6">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="${mesh_path}/link_6.stl" scale="${mesh_scale}"/>
+        </geometry>
+        <material name="debug_link_6"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0.035" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.05" length="0.07"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="2.0"/>
+        <origin xyz="0 0 0.035" rpy="0 0 0"/>
+        <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+      </inertial>
+    </link>
+
+    <link name="${prefix}flange"/>
+    <link name="${prefix}tool0"/>
+
+    <joint name="${prefix}base_link-base" type="fixed">
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}base"/>
+    </joint>
+    <joint name="${prefix}joint_1" type="revolute">
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}link_1"/>
+      <origin xyz="0 0 0.31" rpy="3.141592653589793 0 0"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="-2.9670597283903604" upper="2.9670597283903604" velocity="3.839724354387525" effort="2000"/>
+    </joint>
+    <joint name="${prefix}joint_2" type="revolute">
+      <parent link="${prefix}link_1"/>
+      <child link="${prefix}link_2"/>
+      <origin xyz="0.15 0.064 -0.14" rpy="1.5707963267948966 0 0"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="-3.2288591161895095" upper="1.1344640137963142" velocity="3.1066860685499065" effort="1750"/>
+    </joint>
+    <joint name="${prefix}joint_3" type="revolute">
+      <parent link="${prefix}link_2"/>
+      <child link="${prefix}link_3"/>
+      <origin xyz="0.80 0 -0.012" rpy="0 0 0"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="-2.0943951023931953" upper="3.141592653589793" velocity="4.71238898038469" effort="900"/>
+    </joint>
+    <joint name="${prefix}joint_4" type="revolute">
+      <parent link="${prefix}link_3"/>
+      <child link="${prefix}link_4"/>
+      <origin xyz="0.36 -0.20 0.075" rpy="1.5707963267948966 0 -1.5707963267948966"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="-2.8797932657906435" upper="2.8797932657906435" velocity="7.504915783575617" effort="55"/>
+    </joint>
+    <joint name="${prefix}joint_5" type="revolute">
+      <parent link="${prefix}link_4"/>
+      <child link="${prefix}link_5"/>
+      <origin xyz="0 -0.041 -0.45" rpy="0 1.5707963267948966 1.5707963267948966"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="-2.007128639793479" upper="2.443460952792061" velocity="7.504915783575617" effort="40"/>
+    </joint>
+    <joint name="${prefix}joint_6" type="revolute">
+      <parent link="${prefix}link_5"/>
+      <child link="${prefix}link_6"/>
+      <origin xyz="0.066 0 0.041" rpy="1.5707963267948966 0 -1.5707963267948966"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="-6.1086523819801535" upper="6.1086523819801535" velocity="10.995574287564276" effort="40"/>
+    </joint>
+    <joint name="${prefix}link6-flange" type="fixed">
+      <parent link="${prefix}link_6"/>
+      <child link="${prefix}flange"/>
+      <origin xyz="0 0 -0.0135" rpy="0 1.5707963267948966 0"/>
+    </joint>
+    <joint name="${prefix}link6-tool0" type="fixed">
+      <parent link="${prefix}link_6"/>
+      <child link="${prefix}tool0"/>
+      <origin xyz="0 0 -0.0135" rpy="3.141592653589793 0 3.141592653589793"/>
+    </joint>
+  </xacro:macro>
+</robot>

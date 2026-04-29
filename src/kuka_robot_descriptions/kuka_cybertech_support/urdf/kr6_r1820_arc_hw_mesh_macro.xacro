@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="kr6_r1820_arc_hw_mesh">
+  <xacro:include filename="$(find kuka_cybertech_support)/urdf/kr20_r1810_2_macro.xacro"/>
+
+  <!--
+    Mesh-based approximation for KR 6 R1820 arc HW.
+
+    The workspace does not contain original KR 6 R1820 arc HW meshes. This
+    wrapper reuses the closest local Cybertech mesh model, KR 20 R1810-2,
+    because its reach is very close to KR 6 R1820 arc HW:
+      - KR 6 R1820 arc HW: 1823.5 mm published maximum reach
+      - KR 20 R1810-2: existing local ROS2 mesh/URDF model
+
+    This gives a realistic KUKA robot shape for RViz while keeping the public
+    model name kr6_r1820_arc_hw. Joint limits for MoveIt are supplied in
+    config/kr6_r1820_arc_hw_joint_limits.yaml.
+  -->
+  <xacro:macro name="kuka_kr6_r1820_arc_hw_robot" params="prefix package_name">
+    <xacro:kuka_kr20_r1810_2_robot prefix="${prefix}" package_name="${package_name}"/>
+  </xacro:macro>
+</robot>
