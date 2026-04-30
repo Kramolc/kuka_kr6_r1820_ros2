@@ -5,28 +5,28 @@
     <xacro:property name="mesh_scale" value="0.001 0.001 0.001"/>
 
     <material name="kuka_orange">
-      <color rgba="1.0 0.45 0.0 1.0"/>
+      <color rgba="1.0 0.45 0.0 0.45"/>
     </material>
     <material name="kuka_dark">
-      <color rgba="0.08 0.08 0.08 1.0"/>
+      <color rgba="0.08 0.08 0.08 0.45"/>
     </material>
     <material name="debug_link_1">
-      <color rgba="1.0 0.25 0.0 1.0"/>
+      <color rgba="1.0 0.25 0.0 0.45"/>
     </material>
     <material name="debug_link_2">
-      <color rgba="0.0 0.75 1.0 1.0"/>
+      <color rgba="0.0 0.75 1.0 0.45"/>
     </material>
     <material name="debug_link_3">
-      <color rgba="0.1 0.85 0.25 1.0"/>
+      <color rgba="0.1 0.85 0.25 0.45"/>
     </material>
     <material name="debug_link_4">
-      <color rgba="1.0 0.9 0.0 1.0"/>
+      <color rgba="1.0 0.9 0.0 0.45"/>
     </material>
     <material name="debug_link_5">
-      <color rgba="0.75 0.25 1.0 1.0"/>
+      <color rgba="0.75 0.25 1.0 0.45"/>
     </material>
     <material name="debug_link_6">
-      <color rgba="1.0 0.1 0.55 1.0"/>
+      <color rgba="1.0 0.1 0.55 0.45"/>
     </material>
 
     <link name="${prefix}base"/>
@@ -94,13 +94,6 @@
     </link>
 
     <link name="${prefix}link_3">
-      <visual>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <geometry>
-          <mesh filename="${mesh_path}/link_3.stl" scale="${mesh_scale}"/>
-        </geometry>
-        <material name="debug_link_3"/>
-      </visual>
       <collision>
         <origin xyz="0.18 -0.11 0.04" rpy="0 1.5707963267948966 0"/>
         <geometry>
@@ -115,13 +108,6 @@
     </link>
 
     <link name="${prefix}link_4">
-      <visual>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <geometry>
-          <mesh filename="${mesh_path}/link_4.stl" scale="${mesh_scale}"/>
-        </geometry>
-        <material name="debug_link_4"/>
-      </visual>
       <collision>
         <origin xyz="0 0 -0.225" rpy="0 0 0"/>
         <geometry>
@@ -136,13 +122,6 @@
     </link>
 
     <link name="${prefix}link_5">
-      <visual>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <geometry>
-          <mesh filename="${mesh_path}/link_5.stl" scale="${mesh_scale}"/>
-        </geometry>
-        <material name="debug_link_5"/>
-      </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 1.5707963267948966 0"/>
         <geometry>
@@ -157,13 +136,6 @@
     </link>
 
     <link name="${prefix}link_6">
-      <visual>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <geometry>
-          <mesh filename="${mesh_path}/link_6.stl" scale="${mesh_scale}"/>
-        </geometry>
-        <material name="debug_link_6"/>
-      </visual>
       <collision>
         <origin xyz="0 0 0.035" rpy="0 0 0"/>
         <geometry>
@@ -201,14 +173,14 @@
     <joint name="${prefix}joint_3" type="revolute">
       <parent link="${prefix}link_2"/>
       <child link="${prefix}link_3"/>
-      <origin xyz="0.80 0 -0.012" rpy="0 0 0"/>
+      <origin xyz="0.81 0 -0.012" rpy="0 0 0"/>
       <axis xyz="0 0 1"/>
       <limit lower="-2.0943951023931953" upper="3.141592653589793" velocity="4.71238898038469" effort="900"/>
     </joint>
     <joint name="${prefix}joint_4" type="revolute">
       <parent link="${prefix}link_3"/>
       <child link="${prefix}link_4"/>
-      <origin xyz="0.36 -0.20 0.075" rpy="1.5707963267948966 0 -1.5707963267948966"/>
+      <origin xyz="0.36 0 0" rpy="1.5707963267948966 0 -1.5707963267948966"/>
       <axis xyz="0 0 1"/>
       <limit lower="-2.8797932657906435" upper="2.8797932657906435" velocity="7.504915783575617" effort="55"/>
     </joint>
